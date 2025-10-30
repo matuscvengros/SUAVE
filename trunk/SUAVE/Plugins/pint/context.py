@@ -12,7 +12,10 @@
 from __future__ import division, unicode_literals, print_function, absolute_import
 
 import re
-from collections import defaultdict
+try:
+    from collections import defaultdict
+except ImportError:
+    from collections.abc import defaultdict
 import weakref
 from .compat import ChainMap
 from .util import ParserHelper, string_types

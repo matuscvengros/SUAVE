@@ -15,7 +15,10 @@ from SUAVE.Components.Energy.Energy_Component import Energy_Component
 from SUAVE.Attributes.Solids.Solid import Solid
 from scipy import integrate
 from scipy import interpolate
-from scipy.misc import derivative
+try:
+    from scipy.misc import derivative            # SciPy < 1.12
+except Exception:
+    from scipy.differentiate import derivative   # SciPy ≥ 1.16
 import numpy as np
 
 # ----------------------------------------------------------------------

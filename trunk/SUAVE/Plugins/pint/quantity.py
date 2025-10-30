@@ -14,7 +14,7 @@ import operator
 import functools
 try:
     from collections import Iterable
-except:
+except ImportError:
     from collections.abc import Iterable
 
 from .unit import DimensionalityError, UnitsContainer, UnitDefinition, UndefinedUnitError

@@ -15,7 +15,7 @@ import sys
 
 try:
     from collections import MutableMapping
-except:
+except ImportError:
     from collections.abc import MutableMapping
 if sys.version_info < (3, 0):
     from thread import get_ident

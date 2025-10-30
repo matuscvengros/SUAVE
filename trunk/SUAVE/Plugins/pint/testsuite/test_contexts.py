@@ -4,7 +4,10 @@ from __future__ import division, unicode_literals, print_function, absolute_impo
 
 import itertools
 import unittest
-from collections import defaultdict
+try:
+    from collections import defaultdict
+except ImportError:
+    from collections.abc import defaultdict
 
 from pint import UnitRegistry
 from pint.context import Context, _freeze
