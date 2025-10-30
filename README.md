@@ -53,8 +53,11 @@ Simple Setup
 ```
 git clone https://github.com/suavecode/SUAVE.git
 cd SUAVE/trunk
-python setup.py install
+(python setup.py install) -- deprecated
+python -m pip install .
 ```
+
+For editable mode with symlink version use `python -m pip install -e .`.
 
 More information available at [download](http://suave.stanford.edu/download.html).
 

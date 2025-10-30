@@ -39,7 +39,7 @@ to get these packages individually.
 #   Installation
 # -----------------------------------------------------------
 
-Installation with `setup.py` is deprecated -- use `python -m pip install .` for static snapshot and `python -m pip install -e .` for symlink one. Uninstall with `python -m pip uninstall`.
+Installation with `setup.py` is deprecated -- use `python -m pip install .` for static snapshot and `python -m pip install -e .` for symlink one. Uninstall with `python -m pip uninstall SUAVE`.
 
 SUAVE uses setuptools to install, or distutils if setuptools
 is unavailable.
