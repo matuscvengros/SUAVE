@@ -12,7 +12,10 @@
 #   Imports
 # ----------------------------------------------------------------------  
 
-from collections import OrderedDict
+try:
+    from collections import OrderedDict
+except ImportError:
+    from collections.abc import OrderedDict
 
 # for enforcing attribute style access names
 import string

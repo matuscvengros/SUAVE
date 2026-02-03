@@ -13,7 +13,10 @@
 import json
 from SUAVE.Core import Data, DataOrdered
 import numpy as np
-from collections import OrderedDict
+try:
+    from collections import OrderedDict
+except ImportError:
+    from collections.abc import OrderedDict
 
 # ----------------------------------------------------------------------
 #  Method
