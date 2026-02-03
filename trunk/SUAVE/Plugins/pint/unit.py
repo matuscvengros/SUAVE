@@ -16,7 +16,7 @@ import copy
 import math
 import itertools
 import functools
-import pkg_resources
+from importlib.resources import files as _resource_files
 from decimal import Decimal
 from contextlib import contextmanager
 from io import open
@@ -420,7 +420,7 @@ class UnitRegistry(object):
         self.default_to_delta = default_to_delta
 
         if filename == '':
-            data = pkg_resources.resource_filename(__name__, 'default_en.txt')
+            data = str(_resource_files(__name__).joinpath('default_en.txt'))
             self.load_definitions(data, True)
         elif filename is not None:
             self.load_definitions(filename)
@@ -643,7 +643,7 @@ class UnitRegistry(object):
                 continue
             if line.startswith('@import'):
                 if is_resource:
-                    path = pkg_resources.resource_filename(__name__, line[7:].strip())
+                    path = str(_resource_files(__name__).joinpath(line[7:].strip()))
                 else:
                     try:
                         path = os.path.dirname(file.name)

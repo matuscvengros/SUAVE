@@ -14,7 +14,7 @@
 from __future__ import with_statement
 import os
 import subprocess
-import pkg_resources
+import importlib.metadata
 from .unit import UnitRegistry, DimensionalityError, UndefinedUnitError
 from .util import formatter, pi_theorem, logger
 from .measurement import Measurement
@@ -29,7 +29,7 @@ try:  # try to grab the commit version of our package
                                            cwd=os.path.dirname(os.path.abspath(__file__)))).strip()
 except:  # on any error just try to grab the version that is installed on the system
     try:
-        __version__ = pkg_resources.get_distribution('pint').version
+        __version__ = importlib.metadata.version('pint')
     except:
         pass  # we seem to have a local copy without any repository control or installed without setuptools
               # so the reported version will be __unknown__  
